@@ -14,7 +14,7 @@ export default function Education() {
 
                     {/* Name */}
                     <h2 className="text-3xl md:text-5xl font-medium leading-18 mb-3 lg:mb-6">
-                         Education
+                         UI/UX & Product Designer
                     </h2>
                </div>
 
@@ -22,21 +22,17 @@ export default function Education() {
 
                     {/* Description */}
                     <p className="leading-relaxed mb-4 text-sm md:text-base max-w-6xl text-center lg:text-start">
-                         Hello, I’m Pyush Anand, a seasoned UX practitioner with over 8 years
-                         of diverse experience in the field. My journey in UX has been a
-                         fascinating exploration of user-centric design across various
-                         industries. I specialize in UI/UX and product design, where I’ve
-                         honed my skills in creating seamless and visually captivating
-                         digital experiences.
+                         I design digital products that solve real problems — and I have the track record to prove it.
                     </p>
 
+                    <p className="leading-relaxed mb-4 text-sm md:text-base max-w-6xl text-center lg:text-start">
+                         Across 12+ years and multiple industries, I've led end-to-end product design that has measurably improved usability, reduced friction, and driven business growth. I specialize in UI/UX design, product strategy, interaction design, accessibility (AX/WCAG), and design systems — bringing both strategic vision and execution precision to every project.
+                    </p>
+                    <p className="leading-relaxed mb-4 text-sm md:text-base max-w-6xl text-center lg:text-start">
+                         I've partnered with startups and enterprise teams alike to transform ambiguous briefs into intuitive, scalable digital experiences — from 0→1 product launches to full-scale redesigns serving hundreds of thousands of users.
+                    </p>
                     <p className="leading-relaxed text-sm md:text-base max-w-6xl text-center lg:text-start">
-                         My passion lies in understanding users’ needs, which has driven me to
-                         excel in crafting interfaces that not only look impressive but also
-                         prioritize usability. With a track record of transforming ideas into
-                         successful, user-focused products, I’m dedicated to making technology
-                         more accessible and enjoyable for all. Let’s collaborate to bring
-                         your next project to life!
+                         If you're building something that users deserve to love — I'd like to help.
                     </p>
                </div>
 

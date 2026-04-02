@@ -41,7 +41,7 @@ const App = () => {
   };
 
   return (
-    <div className="poppins bg-main text-offwhite">
+    <div className="poppins bg-main text-offwhite ">
       {/* Background Images */}
       <img
         src={bg2}

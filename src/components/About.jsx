@@ -40,21 +40,15 @@ export default function About() {
 
                          {/* Description */}
                          <p className="leading-relaxed mb-4 text-sm md:text-base max-w-4xl">
-                              Hello, I’m Pyush Anand, a seasoned UX practitioner with over 8 years
-                              of diverse experience in the field. My journey in UX has been a
-                              fascinating exploration of user-centric design across various
-                              industries. I specialize in UI/UX and product design, where I’ve
-                              honed my skills in creating seamless and visually captivating
-                              digital experiences.
+                              I'm Pyush Anand, a seasoned UI/UX and Product Designer with over 12 years of experience shaping digital products that are not just visually compelling — but deeply human-centered.
                          </p>
 
+                         <p className="leading-relaxed mb-4 text-sm md:text-base max-w-4xl">
+                              I specialize in end-to-end product design, from discovery and user research to high-fidelity prototypes and design systems — across industries including enterprise software, SaaS, and consumer applications. My work sits at the intersection of usability, accessibility (AX), and business impact, ensuring every interface I craft serves real users while driving measurable outcomes.
+                         </p>
                          <p className="leading-relaxed text-sm md:text-base max-w-4xl">
-                              My passion lies in understanding users’ needs, which has driven me to
-                              excel in crafting interfaces that not only look impressive but also
-                              prioritize usability. With a track record of transforming ideas into
-                              successful, user-focused products, I’m dedicated to making technology
-                              more accessible and enjoyable for all. Let’s collaborate to bring
-                              your next project to life!
+                              I've partnered with cross-functional teams — PMs, engineers, and stakeholders — to transform complex problems into intuitive, scalable solutions. Whether it's redesigning a clunky enterprise workflow or building a product from zero to one, I bring both strategic thinking and pixel-level craft to every project.
+                              Let's build something users will love.
                          </p>
                     </div>
                </div>
