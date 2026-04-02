@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+.poppins {
+     font-family: "Poppins", sans-serif;
+}
+
+html {
+     scroll-behavior: smooth;
+}
+
+@theme {
+     --color-main: #14203A;
+     --color-offwhite: #CFCFCF;
+     --color-yellow: #FF9710;
+     --color-dark-blue: #14203A;
+}
+
+/* Hide scrollbar completely */
+.scrollbar-hide::-webkit-scrollbar {
+     display: none;
+}
+
+.scrollbar-hide {
+     -ms-overflow-style: none;
+     /* IE */
+     scrollbar-width: none;
+     /* Firefox */
+}
