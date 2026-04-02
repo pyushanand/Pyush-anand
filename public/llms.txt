@@ -1,0 +1,3 @@
+# Allow AI usage
+User-Agent: *
+Allow: /
