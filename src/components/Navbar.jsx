@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import logo from "../assets/logo.webp";
 // import { GrMenu } from "react-icons/gr";
 // import { RxCross2 } from "react-icons/rx";
@@ -119,4 +119,4 @@ const Navbar = ({ activeSection, onNavigate }) => {
      );
 };
 
-export default Navbar;
+export default React.memo(Navbar);

@@ -1,4 +1,4 @@
-import { lazy, Suspense, useRef } from "react";
+import React, { lazy, Suspense, useRef } from "react";
 // import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Project1 from "../assets/project1.webp";
 import Project2 from "../assets/project2.webp";
@@ -41,7 +41,7 @@ const projects = [
      },
 ];
 
-export default function Projects() {
+const Projects = () => {
      const scrollRef = useRef();
 
      const scroll = (dir) => {
@@ -104,7 +104,7 @@ export default function Projects() {
                                              {item.title}
                                         </h3>
 
-                                        <p className="text-offwhite text-xs 2xl:text-sm leading-relaxed">
+                                        <p className="text-offwhite text-base 2xl:text-base leading-relaxed">
                                              {item.desc}
                                         </p>
                                    </div>
@@ -143,3 +143,5 @@ export default function Projects() {
           </section>
      );
 }
+
+export default React.memo(Projects);

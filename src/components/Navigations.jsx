@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const sections = ["home", "skills", "about", "resume", "contact", "projects"];
 
-export default function Navigations({ activeSection = "hero", onNavigate }) {
+const Navigations = ({ activeSection = "hero", onNavigate }) => {
      const [active, setActive] = useState(activeSection); // Use prop directly with default
 
      // Update active when prop changes
@@ -38,3 +38,5 @@ export default function Navigations({ activeSection = "hero", onNavigate }) {
           </div>
      );
 }
+
+export default React.memo(Navigations);

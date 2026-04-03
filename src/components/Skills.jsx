@@ -97,7 +97,7 @@ const Skills = () => {
                                    </h3>
 
                                    {/* Description */}
-                                   <p className=" text-sm leading-5.25 mb-6">
+                                   <p className=" text-base leading-5.25 mb-6">
                                         {item.desc}
                                    </p>
 

@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import React, { lazy, Suspense } from "react";
 // import { BsDribbble } from "react-icons/bs";
 // import { FaLinkedinIn } from "react-icons/fa";
 // import { ImBehance } from "react-icons/im";
@@ -50,4 +50,4 @@ const Socials = () => {
      )
 }
 
-export default Socials;
+export default React.memo(Socials);

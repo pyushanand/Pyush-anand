@@ -21,17 +21,17 @@ export default function Education() {
                <div className="relative w-full">
 
                     {/* Description */}
-                    <p className="leading-relaxed mb-4 text-sm md:text-base max-w-6xl text-center lg:text-start">
+                    <p className="leading-relaxed mb-4 text-base md:text-base max-w-6xl text-center lg:text-start">
                          I design digital products that solve real problems — and I have the track record to prove it.
                     </p>
 
-                    <p className="leading-relaxed mb-4 text-sm md:text-base max-w-6xl text-center lg:text-start">
+                    <p className="leading-relaxed mb-4 text-base md:text-base max-w-6xl text-center lg:text-start">
                          Across 12+ years and multiple industries, I've led end-to-end product design that has measurably improved usability, reduced friction, and driven business growth. I specialize in UI/UX design, product strategy, interaction design, accessibility (AX/WCAG), and design systems — bringing both strategic vision and execution precision to every project.
                     </p>
-                    <p className="leading-relaxed mb-4 text-sm md:text-base max-w-6xl text-center lg:text-start">
+                    <p className="leading-relaxed mb-4 text-base md:text-base max-w-6xl text-center lg:text-start">
                          I've partnered with startups and enterprise teams alike to transform ambiguous briefs into intuitive, scalable digital experiences — from 0→1 product launches to full-scale redesigns serving hundreds of thousands of users.
                     </p>
-                    <p className="leading-relaxed text-sm md:text-base max-w-6xl text-center lg:text-start">
+                    <p className="leading-relaxed text-base md:text-base max-w-6xl text-center lg:text-start">
                          If you're building something that users deserve to love — I'd like to help.
                     </p>
                </div>
