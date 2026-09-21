@@ -1,11 +1,11 @@
-import React, { lazy, Suspense, useState } from "react";
-import logo from "../assets/logo.webp";
-// import { GrMenu } from "react-icons/gr";
-// import { RxCross2 } from "react-icons/rx";
+import React, { lazy, Suspense, useEffect, useState } from "react";
+import defaultLogo from "../assets/logo.webp";
+
 const GrMenu = lazy(() => import("react-icons/gr").then(m => ({ default: m.GrMenu })));
 const RxCross2 = lazy(() => import("react-icons/rx").then(m => ({ default: m.RxCross2 })));
-const menuItems = [
-     { key: "home", value: "Home" }, // Changed from "hero" to "home"
+
+const defaultMenuItems = [
+     { key: "home", value: "Home" },
      { key: "skills", value: "Skills & Specialization" },
      { key: "about", value: "About Me" },
      { key: "resume", value: "My Resume" },
@@ -13,8 +13,47 @@ const menuItems = [
      { key: "projects", value: "My Projects" },
 ];
 
-const Navbar = ({ activeSection, onNavigate }) => {
+const rawApi = (import.meta.env.VITE_BACKEND_URL || "http://localhost:5000/api").trim();
+const cleanApi = rawApi.replace(/\/+$/, "");
+const API = cleanApi.endsWith("/api") ? cleanApi : `${cleanApi}/api`;
+
+const Navbar = ({ activeSection, onNavigate, navbarData: propNavbarData }) => {
      const [open, setOpen] = useState(false);
+     const [navbarData, setNavbarData] = useState(propNavbarData || null);
+
+     useEffect(() => {
+          if (propNavbarData) {
+               setNavbarData(propNavbarData);
+               return;
+          }
+
+          let isMounted = true;
+          const fetchNavbar = async () => {
+               try {
+                    const res = await fetch(`${API}/navbar`);
+                    const json = await res.json();
+                    if (res.ok && json.data && isMounted) {
+                         setNavbarData(json.data);
+                    }
+               } catch (err) {
+                    console.error("Failed to load dynamic navbar:", err);
+               }
+          };
+
+          fetchNavbar();
+          return () => { isMounted = false; };
+     }, [propNavbarData]);
+
+     const logoSrc = navbarData?.logoUrl || defaultLogo;
+     const logoAlt = navbarData?.logoAlt || "Pyush Anand Logo";
+     const phoneText = navbarData?.phone || "+91-9643006703";
+     const phoneCallUrl = navbarData?.phoneCallUrl || `tel:${phoneText.replace(/\s+/g, "")}`;
+     const emailText = navbarData?.email || "pyush.anand7@gmail.com";
+     const emailMailtoUrl = navbarData?.emailMailtoUrl || `mailto:${emailText.trim()}`;
+
+     const activeMenuItems = (navbarData?.menuItems && navbarData.menuItems.length > 0)
+          ? navbarData.menuItems.filter(item => item.isActive !== false)
+          : defaultMenuItems;
 
      const handleNavigation = (key) => {
           if (onNavigate) {
@@ -23,17 +62,14 @@ const Navbar = ({ activeSection, onNavigate }) => {
           setOpen(false);
      };
 
-     // Function to handle phone call
      const handlePhoneClick = () => {
-          window.location.href = "tel:+919643006703";
+          window.location.href = phoneCallUrl;
      };
 
-     // Function to handle email
      const handleEmailClick = () => {
-          window.location.href = "mailto:pyush.anand7@gmail.com";
+          window.location.href = emailMailtoUrl;
      };
 
-     // Handle logo click - navigate to home
      const handleLogoClick = () => {
           if (onNavigate) {
                onNavigate("home");
@@ -48,10 +84,10 @@ const Navbar = ({ activeSection, onNavigate }) => {
                     <div className="w-[40%] flex items-center justify-between text-[15px] 2xl:text-[20px]">
                          {/* Logo - Click to go home */}
                          <img
-                              src={logo}
-                              alt="Logo"
+                              src={logoSrc}
+                              alt={logoAlt}
                               onClick={handleLogoClick}
-                              className="w-6 2xl:w-10 h-9 2xl:h-14 cursor-pointer hover:opacity-80 transition-opacity duration-300"
+                              className="w-6 2xl:w-10 h-9 2xl:h-14 cursor-pointer hover:opacity-80 transition-opacity duration-300 object-contain"
                               title="Go to Home"
                          />
                          {/* Phone Number - Click to Call */}
@@ -60,7 +96,7 @@ const Navbar = ({ activeSection, onNavigate }) => {
                               className="hidden md:block cursor-pointer hover:text-[#5bd1d7] transition-colors duration-300"
                               title="Click to call"
                          >
-                              +91-9643006703
+                              {phoneText}
                          </div>
 
                          {/* Email - Click to Email */}
@@ -69,7 +105,7 @@ const Navbar = ({ activeSection, onNavigate }) => {
                               className="hidden md:block cursor-pointer hover:text-[#5bd1d7] transition-colors duration-300"
                               title="Click to email"
                          >
-                              pyush.anand7@gmail.com
+                              {emailText}
                          </div>
                     </div>
 
@@ -101,9 +137,9 @@ const Navbar = ({ activeSection, onNavigate }) => {
 
                     {/* Menu Items with active state */}
                     <div className="flex flex-col gap-8 px-10 mt-10 text-lg lg:text-2xl">
-                         {menuItems.map((item, i) => (
+                         {activeMenuItems.map((item, i) => (
                               <button
-                                   key={i}
+                                   key={item.key || i}
                                    onClick={() => handleNavigation(item.key)}
                                    className={`cursor-pointer transition text-left ${activeSection === item.key
                                         ? "text-[#5bd1d7]"

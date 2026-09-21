@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-const sections = ["home", "skills", "about", "resume", "contact", "projects"];
+const defaultSections = ["home", "skills", "about", "resume", "contact", "projects"];
 
-const Navigations = ({ activeSection = "hero", onNavigate }) => {
-     const [active, setActive] = useState(activeSection); // Use prop directly with default
+const Navigations = ({ activeSection = "home", onNavigate, sections = defaultSections }) => {
+     const [active, setActive] = useState(activeSection);
 
-     // Update active when prop changes
      useEffect(() => {
           setActive(activeSection);
      }, [activeSection]);
@@ -16,16 +15,19 @@ const Navigations = ({ activeSection = "hero", onNavigate }) => {
           }
      };
 
+     const displaySections = sections && sections.length > 0 ? sections : defaultSections;
+
      return (
           <div className="fixed right-4 md:right-12 top-1/2 -translate-y-1/2 z-50 flex flex-col items-center gap-4 rounded-full ">
-               {sections.map((id) => {
-                    const isActive = active === id;
+               {displaySections.map((id) => {
+                    const sectionId = typeof id === "object" ? id.key : id;
+                    const isActive = active === sectionId;
 
                     return (
                          <button
-                              key={id}
-                              aria-label={`Go to section ${id}`}
-                              onClick={() => scrollToSection(id)}
+                              key={sectionId}
+                              aria-label={`Go to section ${sectionId}`}
+                              onClick={() => scrollToSection(sectionId)}
                               className={`transition-all duration-300 rounded-full cursor-pointer
               ${isActive
                                         ? "h-7 2xl:h-10 w-2 2xl:w-3 bg-white"
@@ -37,6 +39,6 @@ const Navigations = ({ activeSection = "hero", onNavigate }) => {
                })}
           </div>
      );
-}
+};
 
 export default React.memo(Navigations);
