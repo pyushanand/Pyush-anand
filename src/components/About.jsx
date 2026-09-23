@@ -44,22 +44,35 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative w-full min-h-screen flex items-center lg:items-start flex-col justify-center text-white max-w-75 lg:max-w-3xl 2xl:max-w-7xl mx-auto pl-2 pr-2 lg:pr-0 lg:pl-14 pt-20 lg:pt-0"
+      className="relative w-full min-h-screen flex items-start lg:items-start flex-col justify-center text-white max-w-75 lg:max-w-3xl 2xl:max-w-7xl mx-auto pl-2 pr-2 lg:pr-0 lg:pl-14 pt-20 lg:pt-0"
     >
-      <div className="flex flex-col gap-2 items-center lg:items-start justify-center lg:justify-start">
-        {/* Small Heading */}
-        <p className="md:text-[24px] -mb-2 lg:mb-2">
-          {headerSubtitle} <span className="text-yellow">{headerHighlight}</span>
-        </p>
+      <div className="flex gap-5 mb-3">
+        <div className= "flex flex-col gap-2 items-start lg:items-start justify-center lg:justify-start">
+          {/* Small Heading */}
+          <p className="md:text-[24px] -mb-2 lg:mb-2">
+            {headerSubtitle} <span className="text-yellow">{headerHighlight}</span>
+          </p>
 
-        {/* Name */}
-        <h2 className="text-3xl md:text-5xl font-medium leading-18 mb-6">{name}</h2>
+          {/* Name */}
+          <h2 className="text-2xl md:text-5xl font-medium leading-8 md:leading-18 mb-2 md:mb-6">{name}</h2>
+
+       </div>
+        <div className="shrink-0 md:hidden">
+          <div className="w-20 h-20 md:w-57.5 md:h-57.5 rounded-full overflow-hidden">
+            <img
+              src={profileImgUrl}
+              alt="Profile"
+              loading="lazy"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
       </div>
 
       <div className="relative w-full flex flex-col lg:flex-row items-center lg:items-start justify-center gap-5 lg:gap-28">
         {/* LEFT: Image */}
-        <div className="shrink-0">
-          <div className="w-40 h-40 md:w-57.5 md:h-57.5 rounded-full overflow-hidden">
+        <div className="shrink-0 hidden lg:block">
+          <div className="w-28 h-28 md:w-57.5 md:h-57.5 rounded-full overflow-hidden">
             <img
               src={profileImgUrl}
               alt="Profile"
@@ -70,9 +83,9 @@ export default function About() {
         </div>
 
         {/* RIGHT: Content */}
-        <div className="flex-1 text-center lg:text-left">
+        <div className="flex-1 text-left lg:text-left">
           {paragraphs.map((paraText, i) => (
-            <p key={i} className="leading-relaxed mb-4 text-base md:text-base max-w-4xl">
+            <p key={i} className="leading-relaxed mb-4 text-xs md:text-base max-w-4xl">
               {paraText}
             </p>
           ))}

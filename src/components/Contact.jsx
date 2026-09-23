@@ -60,7 +60,7 @@ export default function Contact() {
         </p>
 
         {/* Name */}
-        <h2 className="text-3xl md:text-5xl font-medium leading-10 lg:leading-18 mb-6 text-center lg:text-start">
+        <h2 className="text-2xl md:text-5xl font-medium leading-8 lg:leading-18 mb-6 text-center lg:text-start">
           {mainHeading}
         </h2>
       </div>
@@ -71,7 +71,7 @@ export default function Contact() {
         <div className="space-y-6 w-full lg:w-[40%] 2xl:w-[35%]">
           {/* Email */}
           <div className="flex items-center gap-4">
-            <div className="text-yellow text-2xl lg:text-3xl">
+            <div className="text-yellow text-xl lg:text-3xl">
               <Suspense fallback={null}>
                 <MdEmail />
               </Suspense>
@@ -86,7 +86,7 @@ export default function Contact() {
 
           {/* Phone */}
           <div className="flex items-center gap-4">
-            <div className="text-yellow text-2xl lg:text-3xl">
+            <div className="text-yellow text-xl lg:text-3xl">
               <Suspense fallback={null}>
                 <FaPhoneAlt />
               </Suspense>
@@ -101,7 +101,7 @@ export default function Contact() {
 
           {/* Address */}
           <div className="flex items-start gap-4">
-            <div className="text-yellow text-2xl lg:text-3xl">
+            <div className="text-yellow text-xl lg:text-3xl">
               <Suspense fallback={null}>
                 <FaLocationDot />
               </Suspense>

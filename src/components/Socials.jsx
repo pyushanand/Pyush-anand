@@ -9,7 +9,7 @@ const rawApi = (import.meta.env.VITE_BACKEND_URL || "http://localhost:5000/api")
 const cleanApi = rawApi.replace(/\/+$/, "");
 const API = cleanApi.endsWith("/api") ? cleanApi : `${cleanApi}/api`;
 
-const Socials = () => {
+const Socials = ({ activeSection = "home" }) => {
   const [socialsData, setSocialsData] = useState(null);
 
   useEffect(() => {
@@ -37,8 +37,16 @@ const Socials = () => {
   const instagram = socialsData?.instagram || "https://www.instagram.com/pyush.anand7";
   const behance = socialsData?.behance || "https://www.behance.net/piyushananfd63";
 
+  const isHome = activeSection === "home";
+
   return (
-    <div className="flex flex-row lg:flex-col gap-8 items-center justify-between fixed top-7/8 lg:top-1/2 -translate-y-1/2 left-1/2 lg:left-10 -translate-x-1/2 lg:translate-x-0 bg-dark-blue rounded-full z-9999 p-4 text-2xl shadow-[0px_0px_10px_1px] lg:shadow-none shadow-white">
+    <div
+      className={`fixed z-[55] flex items-center justify-between left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-700 ease-in-out ${
+        isHome
+          ? "flex-row top-7/8 bg-dark-blue rounded-full p-4 text-2xl gap-8 shadow-[0px_0px_10px_1px] shadow-white"
+          : "flex-row top-[34px] bg-transparent rounded-full p-0 text-xl gap-5 shadow-none"
+      } lg:flex-col lg:top-1/2 lg:left-10 lg:translate-x-0 lg:bg-dark-blue lg:rounded-full lg:p-4 lg:text-2xl lg:gap-8 lg:shadow-none`}
+    >
       {dribbble && (
         <a href={dribbble} aria-label="Visit Dribbble profile" target="_blank" rel="noopener noreferrer">
           <Suspense fallback={null}>

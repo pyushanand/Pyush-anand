@@ -97,11 +97,11 @@ const Projects = () => {
     >
       {/* Heading */}
       <div className="flex flex-col gap-2 items-center lg:items-start justify-center lg:justify-start mb-5 lg:mb-10">
-        <p className="md:text-[24px]">
+        <p className="text-[18px] md:text-[24px]">
           {headerSubtitle} <span className="text-yellow">{headerHighlight}</span>
         </p>
 
-        <h2 className="text-3xl md:text-5xl font-medium leading-10 lg:leading-18 text-center lg:text-start">
+        <h2 className="text-2xl md:text-5xl font-medium leading-8 lg:leading-18 text-center lg:text-start">
           {mainHeading}
         </h2>
       </div>
@@ -132,7 +132,7 @@ const Projects = () => {
               <div className="p-3 2xl:p-5">
                 <h3 className="text-base 2xl:text-xl text-cyan-300 mb-2">{item.title}</h3>
 
-                <p className="text-offwhite text-base 2xl:text-base leading-relaxed">
+                <p className="text-offwhite text-sm 2xl:text-base leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -165,7 +165,7 @@ const Projects = () => {
       </div>
 
       {/* Footer */}
-      <h3 className="absolute bottom-44 lg:bottom-6 left-1/2 -translate-x-1/2 text-[13px] lg:text-[16px] text-offwhite">
+      <h3 className="hidden md:block absolute bottom-44 lg:bottom-6 left-1/2 -translate-x-1/2 text-[13px] lg:text-[16px] text-offwhite">
         {copyrightText}
       </h3>
     </section>

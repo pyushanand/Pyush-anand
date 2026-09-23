@@ -43,23 +43,23 @@ export default function Education() {
   return (
     <section
       id="resume"
-      className="relative w-full min-h-screen flex items-center lg:items-start flex-col justify-center text-white max-w-75 lg:max-w-3xl 2xl:max-w-7xl mx-auto pl-2 pr-2 lg:pl-14"
+      className="relative w-full min-h-screen flex items-center lg:items-start flex-col justify-center text-white max-w-75 lg:max-w-3xl 2xl:max-w-7xl mx-auto pl-2 pr-2 lg:pl-14 pt-19 md:pt-0"
     >
-      <div className="flex flex-col gap-2 items-center lg:items-start justify-center lg:justify-start">
+      <div className="flex flex-col gap-2 items-start lg:items-start justify-center lg:justify-start">
         {/* Small Heading */}
-        <p className="md:text-[24px] -mb-2 lg:mb-2">
+        <p className="text-[18px] md:text-[24px] mb-0 lg:mb-2">
           {headerSubtitle} <span className="text-yellow">{headerHighlight}</span>
         </p>
 
         {/* Name */}
-        <h2 className="text-3xl md:text-5xl font-medium leading-18 mb-3 lg:mb-6">{jobTitle}</h2>
+        <h2 className="text-2xl md:text-5xl font-medium leading-8 md:leading-18 mb-3 lg:mb-6">{jobTitle}</h2>
       </div>
 
       <div className="relative w-full">
         {paragraphs.map((pText, i) => (
           <p
             key={i}
-            className="leading-relaxed mb-4 text-base md:text-base max-w-6xl text-center lg:text-start"
+            className="leading-relaxed mb-4 text-xs md:text-base max-w-6xl text-start lg:text-start"
           >
             {pText}
           </p>
@@ -67,7 +67,7 @@ export default function Education() {
       </div>
 
       {/* Footer */}
-      <h3 className="absolute bottom-12 left-1/2 -translate-x-1/2 text-[13px] lg:text-[16px] text-offwhite">
+      <h3 className="hidden md:block absolute bottom-12 left-1/2 -translate-x-1/2 text-[13px] lg:text-[16px] text-offwhite">
         {copyrightText}
       </h3>
     </section>

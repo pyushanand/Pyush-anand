@@ -207,7 +207,7 @@ const App = () => {
       </picture>
 
       <div className="z-999 relative h-full min-h-screen">
-        <Socials />
+        <Socials activeSection={activeSection} />
         <Navigations onNavigate={handleNavigate} activeSection={activeSection} sections={sectionsList} />
         <Navbar activeSection={activeSection} onNavigate={handleNavigate} />
 
