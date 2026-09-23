@@ -44,7 +44,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative w-full min-h-screen flex items-start lg:items-start flex-col justify-center text-white max-w-75 lg:max-w-3xl 2xl:max-w-7xl mx-auto pl-2 pr-2 lg:pr-0 lg:pl-14 pt-20 lg:pt-0"
+      className="relative w-full min-h-screen flex items-start lg:items-start flex-col justify-center text-white max-w-75 lg:max-w-3xl 2xl:max-w-7xl mx-auto pl-2 pr-2 lg:pr-0 lg:pl-14 pt-12 lg:pt-0"
     >
       <div className="flex gap-5 mb-3">
         <div className= "flex flex-col gap-2 items-start lg:items-start justify-center lg:justify-start">

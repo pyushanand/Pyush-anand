@@ -171,7 +171,7 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="relative w-full pt-16 md:pt-20 overflow-hidden min-h-screen flex items-center justify-center">
+    <section id="skills" className="relative w-full pt-12 md:pt-20 overflow-hidden min-h-screen flex items-center justify-center">
       <div className="relative z-10 w-full max-w-3xl lg:max-w-5xl 2xl:max-w-7xl mx-auto px-6">
         {/* Header */}
         <p className="text-gray-300 text-[18px] md:text-[24px] mb-2">

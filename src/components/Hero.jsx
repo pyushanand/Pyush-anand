@@ -46,7 +46,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-30">
+    <section id="hero" className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-30">
       <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
         {/* Small Intro Text */}
         <h1 className="text-lg md:text-2xl text-white mb-8 -mt-8">
