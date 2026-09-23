@@ -55,7 +55,7 @@ const Hero = () => {
         </h1>
 
         {/* Main Heading */}
-        <h2 className="text-2xl lg:text-4xl 2xl:text-5xl font-medium text-white leading-10 md:leading-15 2xl:leading-18 whitespace-pre-line">
+        <h2 className="text-2xl lg:text-4xl 2xl:text-5xl font-medium text-white leading-8 md:leading-15 2xl:leading-18 whitespace-pre-line">
           {heading}
         </h2>
 
